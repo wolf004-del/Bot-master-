@@ -11,8 +11,8 @@ WORKDIR /LazyPrincess/  # Setting the working directory to /LazyPrincess
 RUN pip3 install -U pip && pip3 install -U -r requirements.txt  # Upgrading pip and installing project dependencies
                           # The -U flag is used to upgrade the pip package before installing the project dependencies
 
-COPY . .  # Copying everything from the current directory to the /LazyPrincess directory in the container
+COPY . /LazyPrincess/  # Copying everything from the current directory to the /LazyPrincess directory in the container
 COPY start.sh /start.sh  # Copying the start.sh script to the root directory of the container
 
 CMD ["/bin/bash", "/start.sh"]  # Running the start.sh script using /bin/bash as the interpreter
-EXPOSE 8080  # Exposing port 8080 for communication with the container
+EXPOSE 8080/tcp  # Exposing port 808 for0 communication with the container
